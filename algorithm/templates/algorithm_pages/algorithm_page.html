@@ -1,0 +1,6 @@
+{% extends 'basic_page.html' %}
+
+{% block title %}{{ algorithm.name }}{% endblock %}
+{% block body %}
+    {% include 'form.html' with algorithm_type=algorithm.name form=algorithm.form %}
+{% endblock %}
