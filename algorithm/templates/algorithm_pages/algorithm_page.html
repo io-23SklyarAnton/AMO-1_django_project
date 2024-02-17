@@ -1,6 +1,10 @@
 {% extends 'basic_page.html' %}
+{% load bootstrap4 %}
 
 {% block title %}{{ algorithm.name }}{% endblock %}
+{% block header %}{{ block.super }}{% endblock %}
 {% block body %}
     {% include 'form.html' with algorithm_type=algorithm.name form=algorithm.form %}
+    {% include 'form.html' with algorithm_type=algorithm.name form=file_form %}
+    {{ result }}
 {% endblock %}

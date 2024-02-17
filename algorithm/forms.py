@@ -17,3 +17,6 @@ class CyclicForm(forms.Form):
     n = forms.IntegerField()
     p = forms.IntegerField()
 
+
+class FileForm(forms.Form):
+    file = forms.FileField(allow_empty_file=True)
