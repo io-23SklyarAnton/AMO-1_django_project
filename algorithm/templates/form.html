@@ -1,5 +1,9 @@
-<form action="/{{ algorithm_type }}/" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">надіслати дані</button>
+<form
+  class="form"
+  action="/{{ algorithm_type }}/"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %} {{ form }}
+  <button class="button" type="submit">Надіслати дані</button>
 </form>

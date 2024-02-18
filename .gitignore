@@ -2,3 +2,4 @@ algorithm/__pycache__
 algorithm/migrations/__pycache__
 AMO_1/__pycache__
 db.sqlite3
+node_modules
