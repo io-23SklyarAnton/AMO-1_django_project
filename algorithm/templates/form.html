@@ -4,6 +4,7 @@
   method="post"
   enctype="multipart/form-data"
 >
-  {% csrf_token %} {{ form }}
-  <button class="button" type="submit">Надіслати дані</button>
+  {% csrf_token %}
+    {{ form }}
+  <button class="button" type="submit">Send Data</button>
 </form>

@@ -14,8 +14,8 @@ class BranchesForm(forms.Form):
 
 
 class CyclicForm(forms.Form):
-    n = forms.IntegerField()
-    p = forms.IntegerField()
+    n = forms.IntegerField(max_value=100)
+    p = forms.IntegerField(max_value=100000)
 
 
 class FileForm(forms.Form):

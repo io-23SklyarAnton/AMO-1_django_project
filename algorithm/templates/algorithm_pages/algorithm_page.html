@@ -3,11 +3,28 @@
 
 {% block title %}{{ algorithm.name }}{% endblock %}
 
-{% block body %}
-    <h1>{{ algorithm.name|capfirst }}</h1>
-    <img class="image" src="{% static algorithm.image %}" alt="Algorithm Image">
-    {% include 'form.html' with algorithm_type=algorithm.name form=algorithm.form %}
-    {% include 'form.html' with algorithm_type=algorithm.name form=file_form %}
-    {{ result }}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ algorithm.name|capfirst }}</h1>
+        <img class="image" src="{% static algorithm.image %}" alt="Algorithm Image">
+    </div>
+
+    <div class="form-container">
+        <div class="form">
+            {% include 'form.html' with algorithm_type=algorithm.name form=algorithm.form %}
+        </div>
+        <div class="form">
+            {% include 'form.html' with algorithm_type=algorithm.name form=file_form %}
+        </div>
+    </div>
+
+    <div class="result-container">
+        Result - {{ result }}
+    </div>
+{% endblock %}
+
 {% block header %}{{ block.super }}{% endblock %}

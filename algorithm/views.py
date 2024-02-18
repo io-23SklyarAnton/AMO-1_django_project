@@ -33,8 +33,9 @@ class AlgorithmView(TemplateView):
         algorithm_type = kwargs['algorithm']
         algorithm_function = self.algorithms[algorithm_type]['algorithm']
         algorithm = self.algorithms[algorithm_type]
-        result = 'invalid data'
+        result = 'invalid data, you have entered values that are too large'
         if request.FILES.get('file'):
+            result = 'incorrect file format, it must be .txt file with separated values'
             form = FileForm(request.POST, request.FILES)
             if form.is_valid():
                 result = algorithm_result_from_file(algorithm_function, form.cleaned_data['file'])
