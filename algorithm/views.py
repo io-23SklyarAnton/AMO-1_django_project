@@ -7,16 +7,18 @@ from .file_handler import algorithm_result_from_file
 
 
 def home(request):
-    return HttpResponse("home page")
+    return render(request, 'home_page.html')
 
 
 class AlgorithmView(TemplateView):
     template_name = 'algorithm_pages/algorithm_page.html'
     algorithms = {
-        'linear': {'name': 'linear', 'algorithm': linear_algorithm, 'form': LinearForm(), 'class': LinearForm},
+        'linear': {'name': 'linear', 'algorithm': linear_algorithm, 'form': LinearForm(), 'class': LinearForm,
+                   'image': 'images/linear.jpg'},
         'branches': {'name': 'branches', 'algorithm': branches_algorithm, 'form': BranchesForm(),
-                     'class': BranchesForm},
-        'cyclic': {'name': 'cyclic', 'algorithm': cyclic_algorithm, 'form': CyclicForm(), 'class': CyclicForm}
+                     'class': BranchesForm, 'image': 'images/branches.jpg'},
+        'cyclic': {'name': 'cyclic', 'algorithm': cyclic_algorithm, 'form': CyclicForm(), 'class': CyclicForm,
+                   'image': 'images/cyclic.jpg'}
     }
 
     def get(self, request, *args, **kwargs):

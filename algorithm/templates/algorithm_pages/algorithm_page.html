@@ -1,10 +1,13 @@
 {% extends 'basic_page.html' %}
-{% load bootstrap4 %}
+{% load static %}
 
 {% block title %}{{ algorithm.name }}{% endblock %}
-{% block header %}{{ block.super }}{% endblock %}
+
 {% block body %}
+    <h1>{{ algorithm.name|capfirst }}</h1>
+    <img src="{% static algorithm.image %}" alt="Algorithm Image">
     {% include 'form.html' with algorithm_type=algorithm.name form=algorithm.form %}
     {% include 'form.html' with algorithm_type=algorithm.name form=file_form %}
     {{ result }}
 {% endblock %}
+{% block header %}{{ block.super }}{% endblock %}
