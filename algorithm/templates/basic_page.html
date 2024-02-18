@@ -12,16 +12,16 @@
 <body>
 {% block body %}{% endblock %}
 {% block header %}
-<div class="container-fluid">
+<div class="container">
         <div class="row">
-            <div class="col-4">
-                <a href={% url 'algorithm:algorithm' algorithm='linear' %}>linear</a>
+            <div class="item">
+                <a class="item-link" href={% url 'algorithm:algorithm' algorithm='linear' %}>- Linear</a>
             </div>
-            <div class="col-4">
-                <a href={% url 'algorithm:algorithm' algorithm='branches' %}>branches</a>
+            <div class="item">
+                <a class="item-link" href={% url 'algorithm:algorithm' algorithm='branches' %}>- Branches</a>
             </div>
-            <div class="col-4">
-                <a href={% url 'algorithm:algorithm' algorithm='cyclic' %}>cyclic</a>
+            <div class="item">
+                <a class="item-link" href={% url 'algorithm:algorithm' algorithm='cyclic' %}>- Cyclic</a>
             </div>
         </div>
     </div>
