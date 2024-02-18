@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from algorithm import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('algorithm.urls',  namespace='algorithm')),
+    path('', include('algorithm.urls', namespace='algorithm')),
 ]
+
+handler500 = views.handler_500

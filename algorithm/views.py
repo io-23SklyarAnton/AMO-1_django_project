@@ -10,6 +10,10 @@ def home(request):
     return render(request, 'home_page.html')
 
 
+def handler_500(request):
+    return render(request, '500_page.html')
+
+
 class AlgorithmView(TemplateView):
     template_name = 'algorithm_pages/algorithm_page.html'
     algorithms = {
